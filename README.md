@@ -16,6 +16,21 @@ Code → Docker Image → Kubernetes Deployment → Service → Browser
 
 ## 🚀 How to Run
 
+
+# build image
+docker build -t flask-k8s-app .
+
+# load into minikube
+minikube image load flask-k8s-app
+
+# deploy app
+kubectl apply -f deployment.yaml
+
+# expose app
+kubectl apply -f service.yaml
+
+# open app
+minikube service flask-service --url
 ```bash
 docker build -t flask-k8s-app .
 minikube image load flask-k8s-app
